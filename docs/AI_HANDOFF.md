@@ -3,7 +3,7 @@
 ## Current Product Identity
 
 - Public product name: **BananaPhone**
-- Version line: **2.4.2**
+- Version line: **2.5.0**
 - Tagline: **You speak. It makes sense.**
 - Internal repository / historical codename: `bananaphone`
 - Legacy app kept for reference: `bananafone.py` / `README_V1.md`
@@ -90,6 +90,11 @@ while the app was on 1.9). Keep them in lockstep with `APP_VERSION`.
 
 - Dictate mode: speech-to-text plus optional translation to selected output
   language.
+- Translate tab (Dictate panel, 2.5.0+): pasted text -> `translate_written_text`
+  -> Transcript panel + clipboard. Deliberately a separate prompt from
+  `transform_output_text`: written text has no speech-to-text artifacts to
+  repair, so the prompt only translates and preserves layout. Source language is
+  auto-detected; only the OUTPUT selector matters.
 - Jira Mode: captures polished notes, generates Customer Comment and Internal
   Note, validates output, stores local history, and supports regeneration.
 - Settings exposes silence timeout, provider selection, API keys, model/server

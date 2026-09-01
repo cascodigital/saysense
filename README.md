@@ -8,7 +8,7 @@ You grunt case notes into a microphone in whatever language your brain runs on �
 
 Built for IT support: turn spoken case notes into ticket-ready Jira documentation in one click — and keep every word on your own machine if you want to. No banana is sent to the cloud without your consent.
 
-![Status](https://img.shields.io/badge/Status-2.4.2-16A34A?style=flat-square)
+![Status](https://img.shields.io/badge/Status-2.5.0-16A34A?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-2563EB?style=flat-square)
 ![Casco Digital](https://img.shields.io/badge/Casco-Digital-111827?style=flat-square)
 ![Platforms](https://img.shields.io/badge/Windows%20%7C%20Linux-supported-success?style=flat-square)
@@ -59,6 +59,7 @@ BananaPhone collapses that loop into one hotkey. Talk in your language; polished
 
 - 🎙️ **Press-to-talk dictation** — hold the button (or the global hotkey `Ctrl+Shift+D`), speak, and it auto-stops on silence. The result is on your clipboard before you reach for it.
 - 🌍 **Language routing** — speak Portuguese, Spanish or English; output in any of the three. Brazilian-Portuguese tuned.
+- 📋 **Paste & translate** — the **Translate** tab handles text you already have instead of dictating it: paste, `Ctrl+Enter`, and the translation is on your clipboard with its formatting intact.
 - 🎫 **Jira Mode** — every dictated note is cleaned into professional English as you capture it. One click turns the pile of notes into a **customer reply** + a **structured internal note**, with switchable tone/length **profiles** (Company, MSP client, Internal helpdesk, Strict).
 - 🗣️ **Say the word, get the ticket** — end a normal dictation with the trigger phrase (default *"banana jira"*) and the transcript is promoted into Jira Mode and generated on the spot. Also on the **→ JIRA** button and `Ctrl+Shift+J`.
 - 🔁 **Regenerate on the fly** — shorter, more technical, more customer-friendly, or with a follow-up — without re-dictating.
@@ -103,6 +104,11 @@ Most dictation tools ship your microphone to someone else's server. BananaPhone 
 Pick the **Ollama + local Whisper** path and *nothing* leaves the machine: audio is transcribed locally with `faster-whisper`, and translation/Jira text runs on a local LLM. No keys, no cloud, no audit trail. Perfect for ticket content you can't legally send to a third party. Prefer speed and top-tier quality? Switch to OpenAI or Gemini in one dropdown. Your call, every time.
 
 ---
+
+## ✨ New in 2.5
+
+- **You already have the text? Paste it** — a **Translate** tab next to Transcript takes text you did not dictate (an e-mail, a chat message, a ticket someone else wrote) and translates it into the selected OUTPUT language. Structure survives: line breaks, lists, signatures, ticket IDs, error codes and commands come out untouched. **Ctrl+Enter** fires it, **Paste** pulls the clipboard in, and the result lands in the Transcript panel — copied, editable, and one click from **→ JIRA**.
+- **Silence timeout starts at 3s** — the old 4s / 6s / 8s ladder made every capture wait around after you stopped talking. Now 3s / 4s / 5s / 8s / off, with 3s as the default.
 
 ## ✨ New in 2.4
 
@@ -179,7 +185,7 @@ Everything lives in the in-app **Settings** panel:
 - **API keys** — OpenAI and/or Gemini, stored only in `~/.config/bananafone/settings_v2.json` (env vars `OPENAI_API_KEY` / `GEMINI_API_KEY` also work). They never leave the local file.
 - **AI provider** — one selector for speech, translation and Jira text: OpenAI, Gemini, Ollama, or a custom OpenAI-compatible URL.
 - **Model & server URL** — per provider, with sane defaults. **Download offline models** fetches local Whisper + the Ollama model in one go.
-- **Silence timeout** — how long to wait before auto-stopping a capture (4s / 6s / 8s / off).
+- **Silence timeout** — how long to wait before auto-stopping a capture (3s / 4s / 5s / 8s / off; default 3s).
 
 No key is required for the Ollama path — the app can install Ollama and pull the model for you straight from Settings.
 

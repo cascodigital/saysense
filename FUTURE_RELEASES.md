@@ -1,8 +1,19 @@
 # Future Releases
 
-Status as of v2.4.2.
+Status as of v2.5.0.
 
 ## Done
+
+### Paste & translate, and a shorter silence timeout (v2.5.0) ✅
+- Text he already had (an e-mail, a chat message, a ticket) had to be dictated back
+  into the app to get translated. The Dictate panel now has a **Translate** tab:
+  paste, `Ctrl+Enter`, result in the Transcript panel and on the clipboard.
+- `translate_written_text` is a separate prompt from `transform_output_text` on
+  purpose - pasted text has no speech-to-text artifacts to repair, so the prompt
+  only translates and holds the layout (line breaks, lists, signatures, IDs,
+  error codes, commands). Source language is auto-detected; only OUTPUT matters.
+- Silence timeout ladder was 4s / 6s / 8s / off, and 4s was already too long a wait
+  after every capture. Now 3s / 4s / 5s / 8s / off, default 3s.
 
 ### Source install lands in the user profile, not Downloads (v2.4.2) ✅
 - `install_windows.ps1` built the venv and pointed both shortcuts at whatever folder
