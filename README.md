@@ -108,7 +108,7 @@ Pick the **Ollama + local Whisper** path and *nothing* leaves the machine: audio
 ## ✨ New in 2.5
 
 - **You already have the text? Paste it** — a **Translate** tab next to Transcript takes text you did not dictate (an e-mail, a chat message, a ticket someone else wrote) and translates it into the selected OUTPUT language. Structure survives: line breaks, lists, signatures, ticket IDs, error codes and commands come out untouched. **Ctrl+Enter** fires it, **Paste** pulls the clipboard in, and the result lands in the Transcript panel — copied, editable, and one click from **→ JIRA**.
-- **Silence timeout starts at 3s** — the old 4s / 6s / 8s ladder made every capture wait around after you stopped talking. Now 3s / 4s / 5s / 8s / off, with 3s as the default.
+- **Silence timeout starts at 3s** — the old 4s / 6s / 8s ladder made every capture wait around after you stopped talking. Now 3s / 4s / 5s / 8s, with 3s as the default.
 
 ## ✨ New in 2.4
 
@@ -185,7 +185,7 @@ Everything lives in the in-app **Settings** panel:
 - **API keys** — OpenAI and/or Gemini, stored only in `~/.config/bananafone/settings_v2.json` (env vars `OPENAI_API_KEY` / `GEMINI_API_KEY` also work). They never leave the local file.
 - **AI provider** — one selector for speech, translation and Jira text: OpenAI, Gemini, Ollama, or a custom OpenAI-compatible URL.
 - **Model & server URL** — per provider, with sane defaults. **Download offline models** fetches local Whisper + the Ollama model in one go.
-- **Silence timeout** — how long to wait before auto-stopping a capture (3s / 4s / 5s / 8s / off; default 3s).
+- **Silence timeout** — how long to wait before auto-stopping a capture (3s / 4s / 5s / 8s; default 3s).
 
 No key is required for the Ollama path — the app can install Ollama and pull the model for you straight from Settings.
 

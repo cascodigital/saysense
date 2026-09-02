@@ -13,7 +13,7 @@ Status as of v2.5.0.
   only translates and holds the layout (line breaks, lists, signatures, IDs,
   error codes, commands). Source language is auto-detected; only OUTPUT matters.
 - Silence timeout ladder was 4s / 6s / 8s / off, and 4s was already too long a wait
-  after every capture. Now 3s / 4s / 5s / 8s / off, default 3s.
+  after every capture. Now 3s / 4s / 5s / 8s, default 3s.
 
 ### Source install lands in the user profile, not Downloads (v2.4.2) ✅
 - `install_windows.ps1` built the venv and pointed both shortcuts at whatever folder
