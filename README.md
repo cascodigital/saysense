@@ -8,7 +8,7 @@ You grunt case notes into a microphone in whatever language your brain runs on â
 
 Built for IT support: turn spoken case notes into ticket-ready Jira documentation in one click â€” and keep every word on your own machine if you want to. No banana is sent to the cloud without your consent.
 
-![Status](https://img.shields.io/badge/Status-2.5.0-16A34A?style=flat-square)
+![Status](https://img.shields.io/badge/Status-2.5.1-16A34A?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-2563EB?style=flat-square)
 ![Casco Digital](https://img.shields.io/badge/Casco-Digital-111827?style=flat-square)
 ![Platforms](https://img.shields.io/badge/Windows%20%7C%20Linux-supported-success?style=flat-square)

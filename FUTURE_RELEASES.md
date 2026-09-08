@@ -1,8 +1,21 @@
 # Future Releases
 
-Status as of v2.5.0.
+Status as of v2.5.1.
 
 ## Done
+
+### Fix Wayland input grab / stuck modifiers on Linux (v2.5.1) ✅
+- On Linux running Wayland (Zorin OS / GNOME Wayland), `pynput` hooked into XWayland
+  via XRecord to capture global hotkeys. Focus transitions between native Wayland
+  windows and the X11 app caused dropped `key release` events, desyncing modifier
+  keys (Ctrl/Shift) and pointer grab locks desktop-wide. This broke mouse text
+  selection, double-click word selection, and `Ctrl+A` across all applications
+  until BananaPhone was closed.
+- BananaPhone now detects Wayland sessions (`WAYLAND_DISPLAY`, `XDG_SESSION_TYPE=wayland`,
+  or runtime `wayland-0` socket) and disables the `pynput` keyboard listener.
+- On Linux, system shortcuts are already natively handled by GNOME / Zorin shortcuts
+  calling `bananaphone-toggle` (via `command.json`), so no global hotkey functionality
+  is lost. `BANANAPHONE_FORCE_PYNPUT=1` remains available as an override.
 
 ### Paste & translate, and a shorter silence timeout (v2.5.0) ✅
 - Text he already had (an e-mail, a chat message, a ticket) had to be dictated back

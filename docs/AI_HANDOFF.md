@@ -3,7 +3,7 @@
 ## Current Product Identity
 
 - Public product name: **BananaPhone**
-- Version line: **2.5.0**
+- Version line: **2.5.1**
 - Tagline: **You speak. It makes sense.**
 - Internal repository / historical codename: `bananaphone`
 - Legacy app kept for reference: `bananafone.py` / `README_V1.md`

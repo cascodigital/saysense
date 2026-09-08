@@ -35,7 +35,7 @@ except Exception:
     pynput_keyboard = None
 
 APP_NAME = "BananaPhone"
-APP_VERSION = "2.5.0"
+APP_VERSION = "2.5.1"
 APP_TITLE = f"{APP_NAME} {APP_VERSION}"
 
 # --- Self-update (GitHub Releases) -----------------------------------------
@@ -1230,6 +1230,29 @@ class DictationApp:
     def start_global_hotkey_listener(self):
         if pynput_keyboard is None:
             return
+
+        if platform.system() == "Linux":
+            is_wayland = bool(
+                os.environ.get("WAYLAND_DISPLAY")
+                or os.environ.get("XDG_SESSION_TYPE") == "wayland"
+                or os.path.exists(
+                    os.path.join(
+                        os.environ.get("XDG_RUNTIME_DIR", f"/run/user/{os.getuid()}"),
+                        "wayland-0",
+                    )
+                )
+            )
+            if is_wayland and not os.environ.get("BANANAPHONE_FORCE_PYNPUT"):
+                try:
+                    with open(LOG_FILE, "a", encoding="utf-8") as log:
+                        log.write(
+                            f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Wayland session detected: "
+                            "disabling pynput global keyboard listener to prevent XWayland modifier and pointer grab locks. "
+                            "System shortcuts are handled via bananaphone-toggle.\n"
+                        )
+                except Exception:
+                    pass
+                return
 
         try:
             hotkeys = [
